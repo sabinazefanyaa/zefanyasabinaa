@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kalkulator Konversi</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Efek kupu-kupu -->
+  <div class="butterflies">
+    <div class="butterfly"></div>
+    <div class="butterfly"></div>
+    <div class="butterfly"></div>
+    <div class="butterfly"></div>
+    <div class="butterfly"></div>
+    <div class="butterfly"></div>
+    <div class="butterfly"></div>
+    <div class="butterfly"></div>
+    <div class="butterfly"></div>
+    <div class="butterfly"></div>
+  </div>
+
+  <!-- Kalkulator -->
+  <div class="calculator-container">
+    <h1>Kalkulator Konversi</h1>
+    <div class="display">
+      <input type="text" id="result" value="0" readonly />
+      <div id="conversion-results" class="conversion-display">
+        <p>Biner: <span id="bin-output"></span></p>
+        <p>Oktal: <span id="oct-output"></span></p>
+        <p>Heksadesimal: <span id="hex-output"></span></p>
+      </div>
+    </div>
+
+    <div class="buttons">
+      <div class="category-buttons">
+        <button class="category-btn" id="btn-konversi-desimal">Konversi Basis</button>
+        <button class="category-btn" id="btn-operasi-basis">Operasi Konversi Antar Basis</button>
+      </div>
+
+      <div id="konversi-desimal-panel" class="calculator-panel active">
+        <input type="number" id="desimal-input" placeholder="Masukkan angka desimal" class="base-input" />
+        <select id="bit-select" class="base-select">
+          <option value="0">Tanpa padding</option>
+          <option value="4">4-bit</option>
+          <option value="8">8-bit</option>
+          <option value="16">16-bit</option>
+        </select>
+      </div>
+
+      <div id="operasi-basis-panel" class="calculator-panel">
+        <input type="text" id="base-input" placeholder="Nilai pertama" class="base-input" />
+        <select id="base-select" class="base-select">
+          <option value="10">Desimal</option>
+          <option value="2">Biner</option>
+          <option value="8">Oktal</option>
+          <option value="16">Heksadesimal</option>
+        </select>
+        <input type="text" id="base-input-2" placeholder="Nilai kedua" class="base-input" />
+        <select id="base-select-2" class="base-select">
+          <option value="10">Desimal</option>
+          <option value="2">Biner</option>
+          <option value="8">Oktal</option>
+          <option value="16">Heksadesimal</option>
+        </select>
+        <button class="btn-base-convert" id="btn-base-add">Jumlahkan</button>
+        <button class="btn-base-convert" id="btn-base-subtract">Kurangkan</button>
+        <button class="btn-base-convert" id="btn-base-multiply">Perkalian</button>
+        <button class="btn-base-convert" id="btn-base-divide">Pembagian</button>
+        <button class="btn-clear-base" id="btn-clear-base">C</button>
+      </div>
+    </div>
+
+    <button id="copy-result">Copy Hasil</button>
+  </div>
+
+  <script src="javascript.js"></script>
+</body>
+</html>

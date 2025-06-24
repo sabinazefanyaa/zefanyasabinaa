@@ -1,0 +1,205 @@
+body {
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  background: linear-gradient(to right, #f8c2f9, #e0c3fc);
+  margin: 0;
+  padding: 30px 0 50px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.calculator-container {
+  background-color: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 30px;
+  width: 400px;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  transition: 0.3s ease-in-out;
+  z-index: 2;
+}
+
+.calculator-container:hover {
+  transform: scale(1.01);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.2);
+}
+
+h1 {
+  margin-bottom: 20px;
+  color: #6d3a6d;
+}
+
+.display input {
+  width: 100%;
+  padding: 12px;
+  font-size: 1.5em;
+  border: none;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.9);
+  box-shadow: inset 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.conversion-display {
+  text-align: left;
+  margin-top: 10px;
+  padding: 10px;
+  background: rgba(255,255,255,0.7);
+  border-radius: 10px;
+  font-size: 0.95em;
+  border: 1px solid #ddd;
+}
+
+.category-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 0;
+}
+
+.category-btn {
+  flex: 1;
+  margin: 0 5px;
+  padding: 10px;
+  background: linear-gradient(to right, #e0aaff, #cdb4db);
+  color: #4b296b;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.category-btn:hover {
+  background: #d5a0e6;
+}
+
+.calculator-panel {
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.calculator-panel.active {
+  display: flex;
+}
+
+.base-input, .base-select {
+  width: 100%;
+  padding: 10px;
+  font-size: 1em;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+.btn-base-convert, .btn-clear-base {
+  padding: 10px;
+  font-size: 1em;
+  border-radius: 10px;
+  border: none;
+  width: 100%;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+.btn-base-convert {
+  background-color: #a06cd5;
+  color: white;
+}
+
+.btn-base-convert:hover {
+  background-color: #8d4ebd;
+}
+
+.btn-clear-base {
+  background-color: #ff6b81;
+  color: white;
+}
+
+.btn-clear-base:hover {
+  background-color: #e95d70;
+}
+
+#copy-result {
+  margin-top: 15px;
+  background: #6c757d;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+/* 🦋 Efek Kupu-Kupu */
+.butterflies {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.butterfly {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-image: url('kupu-kupu.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: fly 12s linear infinite, flap 1.2s ease-in-out infinite;
+  opacity: 0.8;
+  filter: drop-shadow(0 0 8px rgba(255, 200, 255, 0.6));
+}
+
+@keyframes fly {
+  0%   { top: 110%; transform: translateX(0) rotate(0deg); }
+  50%  { transform: translateX(-50px) rotate(180deg); }
+  100% { top: -20%; transform: translateX(0) rotate(360deg); }
+}
+
+@keyframes flap {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  50%      { transform: scale(1.2) rotate(3deg); }
+}
+
+.butterfly:nth-child(1) { left: 5%; animation-delay: 0s; }
+.butterfly:nth-child(2) { left: 15%; animation-delay: 1s; }
+.butterfly:nth-child(3) { left: 25%; animation-delay: 2s; }
+.butterfly:nth-child(4) { left: 35%; animation-delay: 3s; }
+.butterfly:nth-child(5) { left: 45%; animation-delay: 4s; }
+.butterfly:nth-child(6) { left: 55%; animation-delay: 5s; }
+.butterfly:nth-child(7) { left: 65%; animation-delay: 6s; }
+.butterfly:nth-child(8) { left: 75%; animation-delay: 7s; }
+.butterfly:nth-child(9) { left: 85%; animation-delay: 8s; }
+.butterfly:nth-child(10){ left: 95%; animation-delay: 9s; }
+
+/* 📱 Responsif Mobile */
+@media (max-width: 480px) {
+  .calculator-container {
+    width: 90%;
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 1.4em;
+  }
+
+  .display input {
+    font-size: 1.2em;
+  }
+
+  .conversion-display {
+    font-size: 0.9em;
+  }
+
+  .btn-base-convert,
+  .btn-clear-base,
+  #copy-result {
+    font-size: 0.9em;
+  }
+}
